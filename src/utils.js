@@ -16,9 +16,9 @@ export const isInternetActive = () => {
     let out;
     try {
         if (isWin) {
-            out = execSync("ping -n 4 8.8.8.8", { encoding: "utf-8" });
+            out = execSync("ping -n 2 8.8.8.8", { encoding: "utf-8" });
         } else {
-            out = execSync("ping -c 4 8.8.8.8", { encoding: "utf-8" });
+            out = execSync("ping -c 2 8.8.8.8", { encoding: "utf-8" });
         }
         return [true, out];
     } catch (error) {
