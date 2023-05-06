@@ -1,3 +1,5 @@
+require("@babel/register");
+
 import Express from "express";
 import { createServer } from "http";
 

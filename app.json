@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "name": "network-stats",
+            "script": "src/app.js",
+            "node_args": "-r esm",
+            "instances": "2",
+            "exec_mode": "cluster"
+        }
+    ]
+}
