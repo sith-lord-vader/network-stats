@@ -1,13 +1,19 @@
-import { isInternetActive, speedTest } from "./utils.js";
+import Express from "express";
+import { createServer } from "http";
 
-// let worked, out;
+const App = Express();
+const server = createServer(App);
 
-let [worked, out] = isInternetActive();
-if (worked) {
-    console.log(out);
-}
+// ? ---ENV---
+let hostname = process.env.HOSTNAME || "0.0.0.0";
+let port = process.env.PORT || 5555;
+// ! ---ENV---
 
-[worked, out] = speedTest();
-if (worked) {
-    console.log(out);
-}
+// ? ---Routers---
+import ApiRouter from "./routes/api/index.js";
+App.use("/", ApiRouter);
+// ! ---Routers---
+
+server.listen(port, hostname, () => {
+    console.log(`Server running on ${hostname}:${port}`);
+});
