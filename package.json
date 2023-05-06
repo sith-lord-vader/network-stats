@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "commonjs",
     "scripts": {
-        "start": "nodemon src/app.js"
+        "start": "nodemon -r esm src/app.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.22",

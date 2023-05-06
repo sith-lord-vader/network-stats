@@ -5,7 +5,11 @@ import { isInternetActive, speedTest } from "../../utils.js";
 const ApiRouter = Router();
 
 ApiRouter.get("/", (req, res) => {
-    return res.send(`Server is Up!<br/>API version running is ${METADATA.version}`);
+    return res.send(`
+    Server is Up!<br/>API version running is ${METADATA.version}<br/><br/>
+    <a href="/api/is-internet-active?packets=4">Check Ping</a><br/>
+    <a href="/api/speed-test">SpeedTest</a><br/>
+    `);
 });
 
 ApiRouter.get("/is-internet-active", (req, res) => {
